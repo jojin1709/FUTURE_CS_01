@@ -12,29 +12,29 @@ Performed a hands-on web application security assessment on a local OWASP Juice 
 
 🧩 What I Did
 
-.Deployed OWASP Juice Shop locally using Docker.
+● Deployed OWASP Juice Shop locally using Docker.
 
-.Analyzed the product review submission workflow.
+● Analyzed the product review submission workflow.
 
-.Used Burp Suite (Proxy + Repeater) to intercept, modify, and replay HTTP requests.
+● Used Burp Suite (Proxy + Repeater) to intercept, modify, and replay HTTP requests.
 
-.Injected a crafted payload and confirmed server-side acceptance (201 Created).
+● Injected a crafted payload and confirmed server-side acceptance (201 Created).
 
-.Captured UI screenshots and complete HTTP request/response logs.
+● Captured UI screenshots and complete HTTP request/response logs.
 
-.Prepared a concise, actionable security report with impact analysis and remediation steps.
+● Prepared a concise, actionable security report with impact analysis and remediation steps.
 
 🛠️ Tools Used
 
-.OWASP Juice Shop (Docker image)
+● OWASP Juice Shop (Docker image)
 
-.Burp Suite Community Edition — Proxy, HTTP History, Repeater
+● Burp Suite Community Edition — Proxy, HTTP History, Repeater
 
-.Web Browsers: Chromium / Firefox (configured with Burp CA)
+● Web Browsers: Chromium / Firefox (configured with Burp CA)
 
-.Docker & basic Linux shell utilities
+● Docker & basic Linux shell utilities
 
-.Markdown → PDF for report creation
+● Markdown → PDF for report creation
 
 🧪 Lab: Quick Reproduction (Local, Safe Environment)
 
@@ -46,17 +46,17 @@ Start Juice Shop
 
 Configure Browser
 
-.Set proxy to 127.0.0.1:8080 (Burp Suite)
+● Set proxy to 127.0.0.1:8080 (Burp Suite)
 
-.Install Burp CA certificate for HTTPS interception
+● Install Burp CA certificate for HTTPS interception
 
 In Burp Suite
 
-.Ensure Proxy → Options has listener on 127.0.0.1:8080
+● Ensure Proxy → Options has listener on 127.0.0.1:8080
 
-.Keep Intercept OFF
+● Keep Intercept OFF
 
-.Use HTTP History and Repeater for manipulation
+● Use HTTP History and Repeater for manipulation
 
 Open Product Page
 
@@ -71,20 +71,20 @@ Modify Review Submission Payload
     }
 
 
-.Send via Repeater
+● Send via Repeater
 
-.Confirm 201 Created with { "status": "success" }
+● Confirm 201 Created with { "status": "success" }
 
-.Refresh UI to verify stored payload
+● Refresh UI to verify stored payload
 
 📁 Evidence Included
 
 All captured artifacts are available under the evidence/ folder:
 
-.Screenshots of the UI
+● Screenshots of the UI
 
-.Full HTTP request/response logs
+● Full HTTP request/response logs
 
-.Burp Suite proxy captures
+● Burp Suite proxy captures
 
 .Proof-of-Concept payload behavior
