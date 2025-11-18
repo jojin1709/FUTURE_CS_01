@@ -1,91 +1,90 @@
 🛡️ FUTURE_CS_01
-Web Application Security Testing – Task 1
+A Future Interns Internship Program – Cyber Security Track
+Task 1: Web Application Security Testing (OWASP Juice Shop)
 
-Future Interns – Cyber Security Internship
 Intern: Jojin John
+Project: Future Interns — Cyber Security Internship
+Date: 2025-11-18
 
-📘 Overview
+🔍 Summary
 
-This repository contains the deliverables for Task 1: Web Application Security Testing completed as part of the Future Interns Cyber Security Internship Program.
-The objective of this task was to assess a vulnerable web application, identify security weaknesses based on OWASP best practices, and prepare a detailed professional security report.
+Performed a hands-on web application security assessment on a local OWASP Juice Shop instance. Identified a stored input handling issue in the product review feature where a malicious payload was accepted and stored by the server. All findings, evidence, and remediation recommendations are included in this repository.
 
-🎯 Objectives
+🧩 What I Did
 
-Deploy and interact with an intentionally vulnerable web application (OWASP Juice Shop).
+.Deployed OWASP Juice Shop locally using Docker.
 
-Perform manual and assisted testing using tools such as Burp Suite Community Edition.
+.Analyzed the product review submission workflow.
 
-Identify and validate security issues including Stored XSS, insecure input handling, and potential injection points.
+.Used Burp Suite (Proxy + Repeater) to intercept, modify, and replay HTTP requests.
 
-Map findings to relevant categories from the OWASP Top 10 (2021).
+.Injected a crafted payload and confirmed server-side acceptance (201 Created).
 
-Document technical evidence, HTTP traffic, risk assessment, and remediation recommendations.
+.Captured UI screenshots and complete HTTP request/response logs.
 
-🧰 Tools & Environment
+.Prepared a concise, actionable security report with impact analysis and remediation steps.
 
-OWASP Juice Shop (Local Docker deployment)
+🛠️ Tools Used
 
-Burp Suite Community Edition (Proxy, HTTP History, Repeater)
+.OWASP Juice Shop (Docker image)
 
-Docker Engine
+.Burp Suite Community Edition — Proxy, HTTP History, Repeater
 
-Chromium/Firefox with proxy configuration
+.Web Browsers: Chromium / Firefox (configured with Burp CA)
 
-Kali Linux (optional)
+.Docker & basic Linux shell utilities
 
-Microsoft Word / PDF for final report
+.Markdown → PDF for report creation
 
-🧪 Testing Scope
+🧪 Lab: Quick Reproduction (Local, Safe Environment)
 
-The assessment focused on evaluating the following areas:
+Note: All testing was performed in a controlled lab. Do not target external or production systems.
 
-Input validation and sanitization gaps
+Start Juice Shop
 
-Stored Cross-Site Scripting (XSS) risks
+    docker run --rm -d -p 3000:3000 bkimminich/juice-shop
 
-Potential injection vectors
+Configure Browser
 
-Unsafe output rendering
+.Set proxy to 127.0.0.1:8080 (Burp Suite)
 
-Application misconfigurations
+.Install Burp CA certificate for HTTPS interception
 
-Vulnerability exposure based on OWASP guidelines
+In Burp Suite
 
-📁 Repository Structure
+.Ensure Proxy → Options has listener on 127.0.0.1:8080
 
-    FUTURE_CS_01/
-    │
-    ├── report/
-    │     └── Task_1_Report.docx        # Full professional security report
-    │
-    ├── evidence/
-    │     ├── request-burp.xml          # Captured HTTP request (Base64)
-    │     ├── response-burp.xml         # Captured HTTP response (Base64)
-    │     └── screenshots/                # Visual PoC evidence
-    │
-    └── README.md                       # Summary of the project
+.Keep Intercept OFF
 
-📄 Security Report
+.Use HTTP History and Repeater for manipulation
 
-The complete Security Assessment Report containing:
+Open Product Page
 
-Executive summary
 
-Vulnerability description
+    http://localhost:3000/#/product/5
 
-Reproduction steps
+Modify Review Submission Payload
 
-Technical evidence
+    {
+    "message": "<script>alert('XSS-POC')</script>",
+    "author": "you@example.com"
+    }
 
-Risk impact
 
-OWASP mapping
+.Send via Repeater
 
-Recommended remediation
+.Confirm 201 Created with { "status": "success" }
 
-is available here:
-📌 /report/Task_1_Report.docx
+.Refresh UI to verify stored payload
 
-🏁 Conclusion
+📁 Evidence Included
 
-This task provided end-to-end exposure to the workflow followed by cybersecurity analysts and penetration testers. It strengthened my understanding of vulnerability identification, documentation, and secure development practices.
+All captured artifacts are available under the evidence/ folder:
+
+.Screenshots of the UI
+
+.Full HTTP request/response logs
+
+.Burp Suite proxy captures
+
+.Proof-of-Concept payload behavior
