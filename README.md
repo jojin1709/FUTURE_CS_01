@@ -1,48 +1,91 @@
-🛡️ FUTURE_CS_01 – Web Application Security Testing
+🛡️ FUTURE_CS_01
+Web Application Security Testing – Task 1
 
-Future Interns – Cyber Security Internship (Task 1)
+Future Interns – Cyber Security Internship
 Intern: Jojin John
 
-📌 Task Overview
+📘 Overview
 
-This repository contains my work for Task 1: Web Application Security Testing, assigned as part of the Future Interns Cyber Security Internship Program.
+This repository contains the deliverables for Task 1: Web Application Security Testing completed as part of the Future Interns Cyber Security Internship Program.
+The objective of this task was to assess a vulnerable web application, identify security weaknesses based on OWASP best practices, and prepare a detailed professional security report.
 
-The objective of this task was to perform a security assessment on an intentionally vulnerable web application, identify weaknesses, analyze their impact, and document them in a professional security report.
+🎯 Objectives
 
-🎯 Key Objectives
+Deploy and interact with an intentionally vulnerable web application (OWASP Juice Shop).
 
-Deploy and explore a vulnerable web application (OWASP Juice Shop)
+Perform manual and assisted testing using tools such as Burp Suite Community Edition.
 
-Use industry-standard tools (Burp Suite, OWASP ZAP)
+Identify and validate security issues including Stored XSS, insecure input handling, and potential injection points.
 
-Identify vulnerabilities such as XSS, SQL Injection, CSRF, etc.
+Map findings to relevant categories from the OWASP Top 10 (2021).
 
-Map findings to the OWASP Top 10 (2021)
+Document technical evidence, HTTP traffic, risk assessment, and remediation recommendations.
 
-Capture evidence (screenshots, Burp logs, request/response pairs)
+🧰 Tools & Environment
 
-Prepare a professional Security Assessment Report
+OWASP Juice Shop (Local Docker deployment)
 
-🧰 Tools & Technologies Used
+Burp Suite Community Edition (Proxy, HTTP History, Repeater)
 
-OWASP Juice Shop (Target application)
+Docker Engine
 
-Burp Suite Community Edition
+Chromium/Firefox with proxy configuration
 
-Docker (to run the Juice Shop instance locally)
+Kali Linux (optional)
 
-Kali Linux / Browser Proxying
+Microsoft Word / PDF for final report
 
-Markdown, Word, PDF for documentation
+🧪 Testing Scope
 
-🔍 Vulnerabilities Tested
+The assessment focused on evaluating the following areas:
 
-Stored Cross-Site Scripting (XSS)
+Input validation and sanitization gaps
 
-Input validation issues
+Stored Cross-Site Scripting (XSS) risks
+
+Potential injection vectors
 
 Unsafe output rendering
 
-Potential injection points
-
 Application misconfigurations
+
+Vulnerability exposure based on OWASP guidelines
+
+📁 Repository Structure
+
+    FUTURE_CS_01/
+    │
+    ├── report/
+    │     └── Task_1_Report.docx        # Full professional security report
+    │
+    ├── evidence/
+    │     ├── request-burp.xml          # Captured HTTP request (Base64)
+    │     ├── response-burp.xml         # Captured HTTP response (Base64)
+    │     └── screenshots/                # Visual PoC evidence
+    │
+    └── README.md                       # Summary of the project
+
+📄 Security Report
+
+The complete Security Assessment Report containing:
+
+Executive summary
+
+Vulnerability description
+
+Reproduction steps
+
+Technical evidence
+
+Risk impact
+
+OWASP mapping
+
+Recommended remediation
+
+is available here:
+📌 /report/Task_1_Report.docx
+
+🏁 Conclusion
+
+This task provided end-to-end exposure to the workflow followed by cybersecurity analysts and penetration testers. It strengthened my understanding of vulnerability identification, documentation, and secure development practices.
